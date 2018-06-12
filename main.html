@@ -4,8 +4,9 @@
     <title>Kółko i krzyżyk</title>
 
 	<link href="style.css" rel="stylesheet">
+  <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="int()">
 
     <h1>Kółko i krzyżyk</h1>
     <table id="table_gra">
@@ -55,6 +56,7 @@
 
     <table>
       <tr>
+
 	   <th class="th_list" style="padding-right:5px;padding-left:35px">Gracz</th>
 	  <th class="th_list" style="padding-right:40px;padding-left:75px">Remis</th>
 	   <th class="th_list">Komputer</th>
@@ -65,9 +67,24 @@
 	   <td class="td_list" id="computer_wynik">0</td>
 	  </tr>
     </table>
-
+    <!-- The wybor dialog for announcing the winner -->
+    <div id="zwyc" class="wybor">
+      <!-- wybor content -->
+      <div class="wybor-content">
+        <span class="zamknij" onclick="zamknijwybor('zwyc')">&times;</span>
+        <p id="wintekst"></p>
+      </div>
     </div>
-
+    <!-- The dialog for getting feedback from the gracz -->
+    <!-- The options dialog -->
+    <div id="optionsDlg" class="wybor">
+      <!-- wybor content -->
+      <div class="wybor-content">
+          <h2>Graj jako:</h2>
+          <label><input type="radio" name="gracz" id="gx" value="x" checked>X &nbsp;</label>
+          <label><input type="radio" name="gracz" id="go" value="0">O<br></label>
+          <p><button id="okBtn" onclick="getOptions()">Start</button></p>
+      </div>
     </div>
-  </body>
-</html>
+    </body>
+    </html>
